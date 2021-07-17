@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>k-means clustering of image</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgba(32, 32, 32, 225);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,1,0">
+    <item row="1" column="0" colspan="2">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="lb_before">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(32, 32, 32, 225);
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="lb_after">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(32, 32, 32, 225);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QSpinBox" name="spinBox">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(32, 32, 32, 225);
+color: white;
+</string>
+          </property>
+          <property name="value">
+           <number>5</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="PB_choose_path">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(32, 32, 32, 225);
+color: white;
+border: none;
+}
+
+QPushButton:hover {
+
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, x3: 0.5, y3: 0.5, x4: 0, y4: 1, x5: 1, y5: 0,
+                                      stop: 0 rgba(64, 64, 64, 225), stop: 0.5 rgba(32, 32, 32, 225) ,stop: 1  rgba(64, 64, 64, 225));
+  
+}
+
+QPushButton:pressed {
+   background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
+                                      stop: 0 #777777, stop: 1  #444444, stop: 0.5  #555555);
+}</string>
+          </property>
+          <property name="text">
+           <string>Выбрать путь до изображения</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(32, 32, 32, 225);
+color: white;
+border: none;
+}
+
+QPushButton:hover {
+
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, x3: 0.5, y3: 0.5, x4: 0, y4: 1, x5: 1, y5: 0,
+                                      stop: 0 rgba(64, 64, 64, 225), stop: 0.5 rgba(32, 32, 32, 225) ,stop: 1  rgba(64, 64, 64, 225));
+  
+}
+
+QPushButton:pressed {
+   background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
+                                      stop: 0 #777777, stop: 1  #444444, stop: 0.5  #555555);
+}</string>
+          </property>
+          <property name="text">
+           <string>Кластеризация</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="PB_save">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+background-color: rgba(32, 32, 32, 225);
+color: white;
+border: none;
+}
+
+QPushButton:hover {
+
+ background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1, x3: 0.5, y3: 0.5, x4: 0, y4: 1, x5: 1, y5: 0,
+                                      stop: 0 rgba(64, 64, 64, 225), stop: 0.5 rgba(32, 32, 32, 225) ,stop: 1  rgba(64, 64, 64, 225));
+  
+}
+
+QPushButton:pressed {
+   background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,
+                                      stop: 0 #777777, stop: 1  #444444, stop: 0.5  #555555);
+}</string>
+          </property>
+          <property name="text">
+           <string>Сохранить изображение</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="styleSheet">
+           <string notr="true">color: white;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Время выполнения&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lb_time">
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: white;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;ДО&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_4">
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;После&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
