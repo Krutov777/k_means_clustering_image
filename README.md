@@ -3,21 +3,6 @@
 
 Clustering of image by k-means algorithm
 
-The source image is selected when `Main.kt` is starting
-
-To display the image is used `JPanel` and `BufferedImage` in `Image.kt`
-
-Clustered image is saved in root of project
-
------------------------------
-
-`IClusterizer.kt` allows you to add others implementations of clustering
-
-`Cluster.kt` and `Pixel.kt` just (nearly) data classes for clustering
-
-`KMeansClusterizer.kt` - my implementation of k-means. Details of implementation are described in comments in class file.
-
-
 # Results:
 
 
